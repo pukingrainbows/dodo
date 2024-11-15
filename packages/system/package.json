@@ -1,0 +1,27 @@
+{
+  "name": "@pukingrainbows-ui/system",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && vite build"
+  },
+  "devDependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "@vitejs/plugin-react": "*",
+    "typescript": "*",
+    "vite": "*"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.13.3",
+    "@types/react-helmet": "^6.1.11",
+    "react-helmet": "^6.1.0"
+  }
+}
