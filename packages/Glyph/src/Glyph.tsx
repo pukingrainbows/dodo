@@ -1,4 +1,5 @@
 import { Atom, AtomProps } from "@pukingrainbows-ui/system"
+import { glyphCSS } from "./Glyph.css"
 import { Icon } from "./Icon"
 
 interface GlyphBase extends AtomProps<HTMLSpanElement> {
@@ -18,7 +19,7 @@ interface IconProps {
 
 export type GlyphProps = GlyphBase & (EmojiProps | IconProps)
 export function Glyph(props: GlyphProps) {
-  const { icon, emoji, a11yText, container = "icon", ...moreProps } = props
+  const { icon, emoji, a11yText, jss, container = "icon", ...moreProps } = props
 
   if (!a11yText) {
     throw new Error("You must provide an `a11yText` prop for accessibility.")
@@ -35,6 +36,7 @@ export function Glyph(props: GlyphProps) {
       as="span"
       container={container}
       className={glyphClassName}
+      jss={[glyphCSS, jss]}
       {...moreProps}
       style={{ fontSize: "var(--font-size)", lineHeight: 1 }}
       role="img"

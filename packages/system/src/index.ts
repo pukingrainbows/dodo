@@ -8,4 +8,7 @@ export {
 } from "./core"
 export { CSSGlobal } from "./modules/CSSGlobal"
 export { system, systemDefinition } from "./system"
-export type { Definition as PukingRainbowDefinition } from "./system/Definition"
+export type {
+  Color as PukingRainbowColor,
+  Definition as PukingRainbowDefinition,
+} from "./system/Definition"

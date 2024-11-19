@@ -45,7 +45,7 @@ const sizeCircleLarge = () => {
     fontSize: "var(--font-size, 1.25rem)",
     lineHeight: "var(--font-size, 1.25rem)",
     padding: `var(--paddingY, 4px)`,
-    borderRadius: "var(--borderRadius, 50%)",
+    borderRadius: "50%",
     aspectRatio: "1/1",
   })
 }
@@ -57,7 +57,7 @@ const sizeCircleMedium = () => {
     fontSize: "var(--font-size, 1.125rem)",
     lineHeight: "var(--line-height, 1.125rem)",
     padding: `var(--paddingY, 3px)`,
-    borderRadius: "var(--borderRadius, 50%)",
+    borderRadius: "50%",
     aspectRatio: "1/1",
   })
 }
@@ -69,7 +69,7 @@ const sizeCircleSmall = () => {
     fontSize: "var(--font-size, 0.925rem)",
     lineHeight: "var(--line-height, 0.925rem)",
     padding: `var(--paddingY, 2px)`,
-    borderRadius: "var(--borderRadius, 50%)",
+    borderRadius: "50%",
     aspectRatio: "1/1",
   })
 }

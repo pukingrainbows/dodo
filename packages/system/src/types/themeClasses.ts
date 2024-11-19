@@ -5,6 +5,7 @@ import type {
   DynamicInteractive,
   DynamicLevels,
   DynamicSize,
+  DynamicTypography,
 } from "./dynamicTypes.ts"
 import type { ThemeConfig } from "./themeConfig.ts"
 
@@ -14,4 +15,5 @@ export type ThemeClasses<Definitions extends PukingRainbowsDefinitions> =
     DynamicAppearance<Definitions> &
     DynamicInteractive<Definitions> &
     DynamicLevels<Definitions> &
+    DynamicTypography<Definitions> &
     ThemeConfig<Definitions>

@@ -1,4 +1,4 @@
-import type { Definition } from "../system/Definition.ts"
+import type { Definition as UserDefinition } from "../system/Definition.ts"
 import type {
   PukingRainbowsDefinitions,
   PukingRainbowsSystemDefinition,
@@ -28,13 +28,13 @@ export class PukingRainbowsSystem<
   private themes: { [key: string]: ThemeClasses<Definitions> } = {}
   #system: PukingRainbowsSystemDefinition<Definitions>
   #theme: string
-  #palette: Definition["palette"]
-  #z: ZDefinitionMap<Definition["z"]>
+  #palette: UserDefinition["palette"]
+  #z: ZDefinitionMap<UserDefinition["z"]>
   #rootScaleFactor: number
 
   constructor(
     config: PukingRainbowsSystemDefinition<Definitions>,
-    palette: Definition["palette"],
+    palette: UserDefinition["palette"],
     z: ZDefinitionMap<Definitions["z"]>,
   ) {
     this.#system = config
@@ -55,11 +55,11 @@ export class PukingRainbowsSystem<
     }
   }
 
-  get palette(): Definition["palette"] {
+  get palette(): UserDefinition["palette"] {
     return this.#palette
   }
 
-  color = (value: keyof Definition["palette"]) => {
+  color = (value: keyof UserDefinition["palette"]) => {
     return this.palette[value]
   }
 
@@ -119,5 +119,12 @@ export class PukingRainbowsSystem<
 
   interactive = (value: Definitions["appearance"][number]) => {
     return this.getTheme(this.theme)[`interactive-${value}`]
+  }
+  typography = (value: Definitions["typography"][number]) => {
+    return this.getTheme(this.theme)[`typography-${value}`]
+  }
+
+  level = (value: Definitions["level"][number]) => {
+    return this.getTheme(this.theme)[`level-${value}`]
   }
 }

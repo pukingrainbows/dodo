@@ -1,0 +1,29 @@
+{
+  "name": "@pukingrainbows-ui/typography",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && vite build"
+  },
+  "dependencies": {
+    "@pukingrainbows-ui/system": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "*",
+    "vite": "*",
+    "@pukingrainbows-ui/divider": "^0.0.1",
+    "@pukingrainbows-ui/container": "^0.0.1"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0-rc-7c8e5e7a-20241101",
+    "react-dom": "^19.0.0-rc-7c8e5e7a-20241101",
+    "@emotion/react": "^11.13.3"
+  }
+}

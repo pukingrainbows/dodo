@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "sb": "cd ./storybook && bun run storybook -- -p 10000",
-    "pk": "bun run ./build.ts"
+    "pk": "bun run ./scripts/build.ts"
   },
   "dependencies": {
     "@emotion/css": "^11.13.4",

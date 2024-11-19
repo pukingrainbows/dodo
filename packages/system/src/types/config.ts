@@ -8,6 +8,7 @@ import type { PaletteDefinition, PaletteIdentifier } from "./palette"
 import type { RootDefinition } from "./root"
 import type { SizeDefinition, SizeIdentifier } from "./size"
 import type { ThemeDefinition, ThemeIdentifier } from "./themes"
+import { TypographyDefinition, TypographyIdentifier } from "./typography.js"
 import type { ZDefinition, ZIdentifier } from "./z"
 
 type PukingRainbowsRootConfig = RootDefinition
@@ -28,6 +29,9 @@ type PukingRainbowsPaletteConfig<P extends Record<string, string>> =
 type PukingRainbowsLevelConfig<L extends ReadonlyArray<string>> =
   LevelDefinition<L>
 
+type PukingRainbowsTypographyConfig<T extends ReadonlyArray<string>> =
+  TypographyDefinition<T>
+
 export type PukingRainbowsDefinitions = {
   [K in SizeIdentifier]: Array<string>
 } & { [K in ContainerIdentifier]: Array<string> } & {
@@ -38,6 +42,8 @@ export type PukingRainbowsDefinitions = {
   [K in PaletteIdentifier]: Record<string, string>
 } & {
   [K in LevelIdentifier]: ReadonlyArray<string>
+} & {
+  [K in TypographyIdentifier]: ReadonlyArray<string>
 }
 
 export type PukingRainbowsSystemDefinition<
@@ -49,4 +55,5 @@ export type PukingRainbowsSystemDefinition<
   PukingRainbowsZConfig<Definition[ZIdentifier]> &
   PukingRainbowsThemeConfig<Definition[ThemeIdentifier]> &
   PukingRainbowsPaletteConfig<Definition[PaletteIdentifier]> &
-  PukingRainbowsLevelConfig<Definition[LevelIdentifier]>
+  PukingRainbowsLevelConfig<Definition[LevelIdentifier]> &
+  PukingRainbowsTypographyConfig<Definition[TypographyIdentifier]>

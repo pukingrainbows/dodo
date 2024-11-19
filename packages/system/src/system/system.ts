@@ -5,6 +5,7 @@ import { systemDefinition } from "./systemDefinition"
 import { appearances } from "./themes/dark/darkDynamicAppearances"
 import { interactive } from "./themes/dark/darkDynamicInteractive"
 import { level } from "./themes/dark/darkDynamicLevel"
+import { typography } from "./themes/dark/darkDynamicTypography"
 import { theme } from "./themes/dark/darkThemeConfig"
 import { containers } from "./themes/dynamicContainer"
 import { sizes } from "./themes/dynamicSize"
@@ -24,6 +25,7 @@ system.registerTheme("dark", {
   ...zMap,
   ...theme,
   ...level,
+  ...typography,
 })
 
 export type { Definition } from "./Definition"

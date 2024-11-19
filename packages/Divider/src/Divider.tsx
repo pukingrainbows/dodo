@@ -1,4 +1,9 @@
-import { Atom, AtomProps, system } from "@pukingrainbows-ui/system"
+import {
+  Atom,
+  AtomProps,
+  PukingRainbowColor,
+  system,
+} from "@pukingrainbows-ui/system"
 import { CSSProperties } from "react"
 import { dividerCSS } from "./Divider.css"
 
@@ -11,6 +16,7 @@ interface DividerBaseProps {
   direction?: "horizontal" | "vertical"
   space?: number
   appearance?: AtomProps["appearance"]
+  color?: PukingRainbowColor
 }
 
 export type DividerProps =
@@ -24,18 +30,17 @@ export function Divider(props: DividerProps) {
     space = 0,
     title,
     titleAlignment,
+    color = "grey600",
     ...moreProps
   } = props
 
+  const borderColor = `${color ? system.color(color) : "var(--borderColor)"}`
   const titleAlignmentCSS = getTitleAlignment(titleAlignment)
   const unit = system.unit.px(space)
   const dividerCSSProperties = {
     "--dividerWidth": direction === "horizontal" ? "100%" : "1px",
     "--dividerHeight": direction === "horizontal" ? "1px" : "100%",
-    "--borderHorizontalColor":
-      direction === "horizontal" ? "var(--borderColor)" : "transparent",
-    "--borderVerticalColor":
-      direction === "vertical" ? "var(--borderColor)" : "transparent",
+    "--borderColor": direction === "horizontal" ? borderColor : "transparent",
     "--padding": unit,
     "--left": titleAlignmentCSS["--left"],
     "--transformX": titleAlignmentCSS["--transformX"],

@@ -12,6 +12,7 @@ export const dividerCSS = css({
   paddingTop: "var(--padding)",
   paddingBottom: "var(--padding)",
   position: "relative",
+  left: "-1px",
   "&:after": {
     content: "''",
     display: "block",

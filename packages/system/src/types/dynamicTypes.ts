@@ -5,6 +5,7 @@ import type { PukingRainbowsDefinitions } from "./config.ts"
 import type { ContainerIdentifier } from "./container.ts"
 import type { InteractiveIdentifier } from "./interactive.ts"
 import type { SizeIdentifier } from "./size.ts"
+import { TypographyIdentifier } from "./typography.js"
 import type { ZIdentifier } from "./z.ts"
 
 /**
@@ -19,14 +20,6 @@ export type DynamicSize<Definitions extends PukingRainbowsDefinitions> = {
   [K in `size-${Definitions[SizeIdentifier][number]}`]: (
     system: PukingRainbowsSystem<Definitions>,
   ) => SerializedStyles
-}
-
-export type DynamicSizeCustomCSSProperties<
-  Definitions extends PukingRainbowsDefinitions,
-> = {
-  [K in `--pk-font-size-${Definitions[SizeIdentifier][number]}`]: string
-} & {
-  [K in `--pk-border-radius-${Definitions[SizeIdentifier][number]}`]: string
 }
 
 export type DynamicContainer<Definitions extends PukingRainbowsDefinitions> = {
@@ -96,6 +89,12 @@ export type DynamicLevels<Definitions extends PukingRainbowsDefinitions> = {
    */
 
   [K in `level-${Definitions["level"][number]}`]: (
+    system: PukingRainbowsSystem<Definitions>,
+  ) => SerializedStyles
+}
+
+export type DynamicTypography<Definitions extends PukingRainbowsDefinitions> = {
+  [K in `typography-${Definitions[TypographyIdentifier][number]}`]: (
     system: PukingRainbowsSystem<Definitions>,
   ) => SerializedStyles
 }

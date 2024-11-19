@@ -23,6 +23,7 @@ export default (options: any) => {
         formats: ["es"],
         fileName: "index",
       },
+      sourcemap: true,
     },
   })
 

@@ -20,7 +20,6 @@ export function Atom(props: AtomProps): ReactNode {
     container = "contained",
     jss,
     as: Component = "div",
-    color,
     ref,
     ...rest
   } = props
