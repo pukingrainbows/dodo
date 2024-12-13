@@ -1,25 +1,23 @@
 import { Collection } from "../Collection"
-import { Notifier } from "../Notifier"
-import type { Item } from "../types"
-
-export interface SingleSelectionState {
-  selectionId: string | null
-}
+import type { ISelection, Item } from "../types"
+import { UIEmitter } from "../UIEmitter/UIEmitter"
 
 /**
  * Manages single item selection within a collection.
  */
-export class SingleSelection<
-  T extends Item,
-> extends Notifier<SingleSelectionState> {
+export class SingleSelection<T extends Item>
+  extends UIEmitter<T | null, ReadonlyArray<"selection">>
+  implements ISelection<T>
+{
   /** The collection of items */
-  #collection: Collection<T> = new Collection<T>()
+  #collection: Collection<T>
 
   /** The currently selected item */
   #selectedItem: T | null = null
 
-  constructor() {
-    super({ selectionId: null })
+  constructor(collection: Collection<T>) {
+    super()
+    this.#collection = collection
   }
 
   set selectedItem(value: T | null) {
@@ -37,7 +35,7 @@ export class SingleSelection<
       throw new Error(`Item with id '${id}' not found.`)
     }
     this.#selectedItem = item
-    this.notify("selectionId", id)
+    this.emit("selection", item)
   }
 
   /**
@@ -45,7 +43,7 @@ export class SingleSelection<
    */
   deselect = (): void => {
     this.#selectedItem = null
-    this.notify("selectionId", null)
+    this.emit("selection", null)
   }
 
   /**
@@ -71,14 +69,34 @@ export class SingleSelection<
    */
   clear = (): void => {
     this.deselect()
-    this.notify("selectionId", null)
+    this.emit("selection", null)
   }
 
   get items(): T[] {
     return this.#collection.items
   }
 
-  registry = (item: T): Item => {
-    return this.#collection.registry(item)
+  add = (item: T, selectedItem = false): Item => {
+    const _item = this.#collection.registry(item)
+    if (selectedItem) {
+      this.#selectedItem = _item
+    }
+    return _item
+  }
+
+  remove = (id: string): boolean => {
+    if (this.#selectedItem?.id === id) {
+      this.#selectedItem = null
+    }
+    return this.#collection.remove(id)
+  }
+
+  dispose() {
+    this.clearSubscribers()
+    this.#collection.clear()
+  }
+
+  getCollection = () => {
+    return this.#collection
   }
 }

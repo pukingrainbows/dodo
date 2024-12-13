@@ -27,6 +27,7 @@ export interface TypographyProps extends Omit<AtomProps, "size"> {
   lineHeight?: string
   color?: PukingRainbowColor
   type: PukingRainbowDefinition["typography"][number]
+  hasInteractiveAppearance?: boolean
 }
 
 export function Typography(props: TypographyProps) {
@@ -45,6 +46,8 @@ export function Typography(props: TypographyProps) {
     transform,
     as = "p",
     type = "medium",
+    hasInteractiveAppearance = false,
+    appearance,
     ...moreProps
   } = props
 
@@ -62,15 +65,22 @@ export function Typography(props: TypographyProps) {
     "--textTransform": transform ?? undefined,
   } as CSSProperties
 
+  const interactiveAppearanceCSS =
+    appearance && hasInteractiveAppearance
+      ? system.interactive(appearance)(system)
+      : undefined
+
   return (
     <Atom
       jss={[
+        interactiveAppearanceCSS,
         typographyCSSSystem,
         typographyCSS,
         isVisuallyHidden ? typographyIsVisuallyHiddenCSS : undefined,
         ellipsis ? typographyEllipsisCSS : undefined,
         jss,
       ]}
+      appearance={appearance}
       style={typographyCSSProperties}
       {...moreProps}
       as={as}

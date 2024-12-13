@@ -2,6 +2,7 @@
 
 import { readdirSync, readFileSync, statSync } from "fs"
 import { join } from "path"
+import type { PackageInfo } from "../types"
 function getPackages(): Map<string, PackageInfo> {
   const packagesDir = join(process.cwd(), "packages")
 

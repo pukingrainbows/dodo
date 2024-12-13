@@ -1,18 +1,24 @@
 import { css } from "@emotion/react"
 
 export const dividerCSS = css({
+  boxSizing: "border-box",
+  "--dividerWidth": "initial",
+  "--dividerHeight": "initial",
+  "--padding": "initial",
+  "--transformX": "initial",
+  "--left": "initial",
+  "--blur-filter": "initial",
   width: "var(--dividerWidth)",
   height: "var(--dividerHeight)",
   background: "transparent",
   display: "block",
-  border: "1px solid transparent",
+  border: "0",
   backgroundColor: "transparent",
   paddingLeft: 0,
   paddingRight: 0,
   paddingTop: "var(--padding)",
   paddingBottom: "var(--padding)",
   position: "relative",
-  left: "-1px",
   "&:after": {
     content: "''",
     display: "block",

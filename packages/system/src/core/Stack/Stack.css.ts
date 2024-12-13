@@ -1,11 +1,17 @@
 import { css, SerializedStyles } from "@emotion/react"
 
 const variableCSS = {
-  display: "var(--stackDisplay)",
-  gap: "var(--stackGap)",
-  alignItems: "var(--stackAlignItems)",
-  justifyContent: "var(--stackJustifyContent)",
-  padding: `var(--paddingY, 0) var(--paddingX, 0)`,
+  "--stackPaddingX": "initial",
+  "--stackPaddingY": "initial",
+  "--stackAlignItems": "initial",
+  "--stackJustifyContent": "initial",
+  "--stackGap": "initial",
+  "--stackDisplay": "initial",
+  display: "var(--stackDisplay, flex)",
+  gap: "var(--stackGap, 0)",
+  alignItems: "var(--stackAlignItems, flex-start)",
+  justifyContent: "var(--stackJustifyContent, flex-start)",
+  padding: `var(--stackPaddingY, 0) var(--stackPaddingX, 0)`,
 }
 export const stackColumnCSS = css({
   flexDirection: "column",

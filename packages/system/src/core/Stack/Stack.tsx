@@ -55,8 +55,8 @@ export function Stack(props: StackProps): ReactNode {
     "--stackGap": gapInPx,
     "--stackJustifyContent": justifyContent,
     "--stackAlignItems": alignItems,
-    "--paddingX": paddingX ? system.unit.px(paddingX) : undefined,
-    "--paddingY": paddingY ? system.unit.px(paddingY) : undefined,
+    "--stackPaddingX": paddingX ? system.unit.px(paddingX) : undefined,
+    "--stackPaddingY": paddingY ? system.unit.px(paddingY) : undefined,
   } as CSSProperties
 
   return (

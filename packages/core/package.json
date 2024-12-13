@@ -1,5 +1,5 @@
 {
-  "name": "@pukingrainbows-ui/button",
+  "name": "@pukingrainbows-ui/core",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
@@ -13,19 +13,15 @@
     "build": "rm -rf dist && vite build"
   },
   "dependencies": {
-    "@pukingrainbows-ui/system": "^0.0.1",
-    "@pukingrainbows-ui/core": "^0.0.1"
+    "@pukingrainbows-ui/system": "^0.0.1"
   },
   "devDependencies": {
     "typescript": "*",
-    "vite": "*",
-    "@pukingrainbows-ui/glyph": "^0.0.1",
-    "@pukingrainbows-ui/divider": "^0.0.1"
+    "vite": "*"
   },
   "peerDependencies": {
     "react": "^19.0.0-rc-7c8e5e7a-20241101",
     "react-dom": "^19.0.0-rc-7c8e5e7a-20241101",
-    "@emotion/react": "^11.13.3",
-    "nanoid": "^5.0.8"
+    "@emotion/react": "^11.13.3"
   }
 }

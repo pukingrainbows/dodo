@@ -1,11 +1,12 @@
 #!/usr/bin/env bun
 
+import type { PackageInfo } from "./types"
 import { getPackages } from "./utils/getPackages"
 
 const packagesMap = getPackages()
 
 const sortedPackages: PackageInfo[] = [
-  packagesMap.get("@pukingrainbows-ui/logic")!,
+  packagesMap.get("@pukingrainbows-ui/core")!,
   packagesMap.get("@pukingrainbows-ui/system")!,
   packagesMap.get("@pukingrainbows-ui/divider")!,
   ...Array.from(packagesMap.values()).filter(

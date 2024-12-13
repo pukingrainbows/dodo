@@ -10,8 +10,6 @@ import {
 import { ReactNode } from "react"
 import { Button } from "./Button"
 import { Group } from "./Group"
-import { RadioButton } from "./Radio"
-import { RadioButtonGroup } from "./Radio.provider"
 const __TEXT_BUTTON__ = "Baby orca"
 export default {
   title: "Components/Button",
@@ -29,7 +27,6 @@ const Story = (props: StoryProps) => {
   )
 }
 
-const { log } = console
 export const _Button = () => {
   return (
     <Story>
@@ -301,52 +298,6 @@ export const _Button = () => {
             <Glyph emoji="🥵" a11yText="hot" />
           </Button>
         </Group>
-      </Stack>
-      <Divider title="RadioButton" space={3} />
-      <Stack gap={2}>
-        <Stack>
-          <RadioButtonGroup
-            onChange={(value) => log(value)}
-            defaultValue="baby"
-          >
-            <RadioButton size="large" value="baby">
-              Baby orca
-            </RadioButton>
-            <RadioButton size="large" value="daddy">
-              Daddy orca
-            </RadioButton>
-            <RadioButton size="large" value="mommy">
-              Mommy orca
-            </RadioButton>
-          </RadioButtonGroup>
-        </Stack>
-        <Stack>
-          <RadioButtonGroup
-            iconChecked="check"
-            onChange={(value) => log(value)}
-            defaultValue="baby"
-          >
-            <RadioButton value="baby">Baby orca</RadioButton>
-            <RadioButton value="daddy">Daddy orca</RadioButton>
-            <RadioButton value="mommy">Mommy orca</RadioButton>
-          </RadioButtonGroup>
-        </Stack>
-        <Stack>
-          <RadioButtonGroup
-            onChange={(value) => log(value)}
-            defaultValue="baby"
-          >
-            <RadioButton size="small" value="baby">
-              Baby orca
-            </RadioButton>
-            <RadioButton size="small" value="daddy">
-              Daddy orca
-            </RadioButton>
-            <RadioButton size="small" value="mommy">
-              Mommy orca
-            </RadioButton>
-          </RadioButtonGroup>
-        </Stack>
       </Stack>
     </Story>
   )

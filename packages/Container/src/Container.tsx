@@ -32,6 +32,7 @@ export function Container(props: ContainerProps) {
     color,
     padding = [0.5, 0.5],
     appearance,
+    style,
     ...moreProps
   } = props
 
@@ -77,6 +78,8 @@ export function Container(props: ContainerProps) {
     ...(borderColorCSSProp ?? {}),
     ...(backgroundColorCSSProp ?? {}),
     ...(colorCSSProp ?? {}),
+    ["--stackPaddingX"]: system.unit.px(padding[0] ?? 0.5),
+    ["--stackPaddingY"]: system.unit.px(padding[1] ?? 0.5),
   } as CSSProperties
 
   return (
@@ -84,6 +87,7 @@ export function Container(props: ContainerProps) {
       jss={[levelCSS, containerCSS, appearanceCSS, jss]}
       style={{
         ...cardCSSProperties,
+        ...style,
       }}
       {...moreProps}
     />

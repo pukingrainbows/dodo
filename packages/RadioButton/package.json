@@ -1,5 +1,5 @@
 {
-  "name": "@pukingrainbows-ui/logic",
+  "name": "@pukingrainbows-ui/radio-button",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
@@ -13,9 +13,13 @@
     "build": "rm -rf dist && vite build"
   },
   "dependencies": {
-    "@pukingrainbows-ui/system": "^0.0.1"
+    "@pukingrainbows-ui/system": "^0.0.1",
+    "@pukingrainbows-ui/core": "^0.0.1",
+    "@pukingrainbows-ui/typography": "^0.0.1"
   },
   "devDependencies": {
+    "@pukingrainbows-ui/container": "^0.0.1",
+    "@pukingrainbows-ui/divider": "^0.0.1",
     "typescript": "*",
     "vite": "*"
   },

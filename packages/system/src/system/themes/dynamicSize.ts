@@ -4,6 +4,13 @@ import type { Definition } from "../Definition"
 
 const sizeLarge = () => {
   return css({
+    "--borderRadius": "initial",
+    "--borderWidth": "initial",
+    "--font-size": "initial",
+    "--line-height": "initial",
+    "--paddingX": "initial",
+    "--paddingY": "initial",
+    "--gap": "initial",
     boxSizing: "border-box",
     borderWidth: "var(--borderWidth, 1px)",
     fontSize: "var(--font-size, 1.25rem)",
@@ -16,6 +23,13 @@ const sizeLarge = () => {
 
 const sizeMedium = () => {
   return css({
+    "--borderRadius": "initial",
+    "--borderWidth": "initial",
+    "--font-size": "initial",
+    "--line-height": "initial",
+    "--paddingX": "initial",
+    "--paddingY": "initial",
+    "--gap": "initial",
     boxSizing: "border-box",
     borderWidth: "var(--borderWidth, 1px)",
     fontSize: "var(--font-size, 1.125rem)",
@@ -28,6 +42,13 @@ const sizeMedium = () => {
 
 const sizeSmall = () => {
   return css({
+    "--borderRadius": "initial",
+    "--borderWidth": "initial",
+    "--font-size": "initial",
+    "--line-height": "initial",
+    "--paddingX": "initial",
+    "--paddingY": "initial",
+    "--gap": "initial",
     boxSizing: "border-box",
     borderWidth: "var(--borderWidth, 1px)",
     fontSize: "var(--font-size, 0.925rem)",
@@ -40,6 +61,9 @@ const sizeSmall = () => {
 
 const sizeCircleLarge = () => {
   return css({
+    "--borderWidth": "initial",
+    "--font-size": "initial",
+    "--paddingY": "initial",
     boxSizing: "border-box",
     borderWidth: "var(--borderWidth, 1px)",
     fontSize: "var(--font-size, 1.25rem)",
@@ -52,6 +76,9 @@ const sizeCircleLarge = () => {
 
 const sizeCircleMedium = () => {
   return css({
+    "--borderWidth": "initial",
+    "--font-size": "initial",
+    "--paddingY": "initial",
     boxSizing: "border-box",
     borderWidth: "var(--borderWidth, 1px)",
     fontSize: "var(--font-size, 1.125rem)",
